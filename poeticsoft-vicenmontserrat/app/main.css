@@ -1,0 +1,21 @@
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app/main.scss ***!
+  \************************************************************************************************************/
+.grecaptcha-badge {
+  bottom: 80px !important;
+}
+
+.sep-page {
+  font-size: 1em !important;
+}
+.sep-page * {
+  font-family: "Abhaya Libre" !important;
+}
+.sep-page .sep-calendar {
+  margin: 0 !important;
+}
+.sep-page .sep-calendar .search {
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map*/
