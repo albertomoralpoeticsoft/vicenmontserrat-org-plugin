@@ -39,39 +39,33 @@ export default $ => {
   )
   
   /*
-  let $iframe = $('.page-id-1757 iframe.ipz-iframe')
+  */
+  const title = $(document).attr('title');
+  let $iframe = $('iframe#mailrelay-subscription')
   if($iframe.length) {
 
-    $iframe = $iframe.eq(0)
-    $iframe
-    .on(
-      'click',
+    $iframe.on(
+      'load',
       function() {
+    
+        const $button = $iframe.contents().find('#subscribe-form .submit-wrapper input');
+        $button 
+        .on(
+          'click',
+          function() { 
 
-        console.log('click')
+            gtag(
+              'event', 
+              'mailrelay_subscription', 
+              {
+                'page_title': title,
+                'debug_mode': true 
+              }
+            )
+          }
+        )
+
       }
     )
   }
-  const $button = $iframe.contents().find('#subscribe-form .submit-wrapper input');
-
-  console.log($iframe.contents().find('#subscribe-form'))
-
-  $button
-  .on(
-    'click',
-    function() { 
-
-      console.log('mail_relay')
-
-      gtag(
-        'event', 
-        'form_subscription', 
-        {
-          'form': 'INSCRÍBETE A NUESTRA NEWSLETTER',
-          'debug_mode': true 
-        }
-      )
-    }
-  )
-  */
 }

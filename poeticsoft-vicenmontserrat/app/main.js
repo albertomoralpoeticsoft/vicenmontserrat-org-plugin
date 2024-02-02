@@ -34,35 +34,20 @@ __webpack_require__.r(__webpack_exports__);
   });
 
   /*
-  let $iframe = $('.page-id-1757 iframe.ipz-iframe')
-  if($iframe.length) {
-      $iframe = $iframe.eq(0)
-    $iframe
-    .on(
-      'click',
-      function() {
-          console.log('click')
-      }
-    )
-  }
-  const $button = $iframe.contents().find('#subscribe-form .submit-wrapper input');
-    console.log($iframe.contents().find('#subscribe-form'))
-    $button
-  .on(
-    'click',
-    function() { 
-        console.log('mail_relay')
-        gtag(
-        'event', 
-        'form_subscription', 
-        {
-          'form': 'INSCRÍBETE A NUESTRA NEWSLETTER',
-          'debug_mode': true 
-        }
-      )
-    }
-  )
   */
+  var title = $(document).attr('title');
+  var $iframe = $('iframe#mailrelay-subscription');
+  if ($iframe.length) {
+    $iframe.on('load', function () {
+      var $button = $iframe.contents().find('#subscribe-form .submit-wrapper input');
+      $button.on('click', function () {
+        gtag('event', 'mailrelay_subscription', {
+          'page_title': title,
+          'debug_mode': true
+        });
+      });
+    });
+  }
 });
 
 /***/ }),

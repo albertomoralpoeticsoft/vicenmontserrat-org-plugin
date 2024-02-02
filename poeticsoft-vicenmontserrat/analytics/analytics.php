@@ -12,6 +12,7 @@ add_action(
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-15RZMM1QXB');
+          gtag('config', 'AW-11480479572');
         </script>
       <!-- End Google tag (gtag.js) -->
 
